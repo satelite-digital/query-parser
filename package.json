@@ -1,11 +1,11 @@
 {
-  "name": "rollup-starter-lib",
+  "name": "@satelite/query-parser",
   "version": "1.0.0",
-  "main": "dist/how-long-till-lunch.cjs.js",
-  "module": "dist/how-long-till-lunch.esm.js",
-  "browser": "dist/how-long-till-lunch.umd.js",
+  "main": "dist/query-parser.cjs.js",
+  "module": "dist/query-parser.esm.js",
+  "browser": "dist/query-parser.umd.js",
   "dependencies": {
-    "ms": "^2.0.0"
+    "qs": "6.9.4"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
@@ -15,7 +15,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "node test/test.js",
+    "test": "node test",
     "pretest": "npm run build"
   },
   "files": [

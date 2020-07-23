@@ -1,45 +1,65 @@
-# rollup-starter-lib
+# query-parser
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/rollup/rollup-starter-lib.svg)](https://greenkeeper.io/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-This repo contains a bare-bones example of how to create a library using Rollup, including importing a module from `node_modules` and converting it from CommonJS.
+[![GitHub stars](https://img.shields.io/github/stars/Naereen/StrapDown.js.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/satelite-digital/query-parser/stargazers/)
 
-We're creating a library called `how-long-till-lunch`, which usefully tells us how long we have to wait until lunch, using the [ms](https://github.com/zeit/ms) package:
+[![GitHub watchers](https://img.shields.io/github/watchers/Naereen/StrapDown.js.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/satelite-digital/query-parser/watchers/)
+
+
+This repo contains an implementation of the e [qs](https://www.npmjs.com/package/qs) package as a query parsing middleware for express and web clients.
+
 
 ```js
-console.log('it will be lunchtime in ' + howLongTillLunch());
+console.log(query.parse("where[email][endsWith]=`@gmail.com`"));
+
+// Results
+{
+    where : {
+        email : {
+            endsWith : "@gmail.com"
+        }
+    }
+}
+```
+
+```js
+console.log(query.build({
+    where : {
+        email : {
+            endsWith : "@gmail.com"
+        }
+    }
+}));
+
+// Results
+?where[email][endsWith]=`@gmail.com`
+
 ```
 
 ## Getting started
 
-Clone this repository and install its dependencies:
+Install this package as a node module
 
 ```bash
-git clone https://github.com/rollup/rollup-starter-lib
-cd rollup-starter-lib
-npm install
+npm install --save @satelite/query-parser
 ```
+
+
+## Building and maintaining
 
 `npm run build` builds the library to `dist`, generating three files:
 
-* `dist/how-long-till-lunch.cjs.js`
+* `dist/query-parser.cjs.js`
     A CommonJS bundle, suitable for use in Node.js, that `require`s the external dependency. This corresponds to the `"main"` field in package.json
-* `dist/how-long-till-lunch.esm.js`
+* `dist/query-parser.esm.js`
     an ES module bundle, suitable for use in other people's libraries and applications, that `import`s the external dependency. This corresponds to the `"module"` field in package.json
-* `dist/how-long-till-lunch.umd.js`
+* `dist/query-parser.umd.js`
     a UMD build, suitable for use in any environment (including the browser, as a `<script>` tag), that includes the external dependency. This corresponds to the `"browser"` field in package.json
 
 `npm run dev` builds the library, then keeps rebuilding it whenever the source files change using [rollup-watch](https://github.com/rollup/rollup-watch).
 
 `npm test` builds the library, then tests it.
-
-## Variations
-
-* [babel](https://github.com/rollup/rollup-starter-lib/tree/babel) — illustrates writing the source code in ES2015 and transpiling it for older environments with [Babel](https://babeljs.io/)
-* [buble](https://github.com/rollup/rollup-starter-lib/tree/buble) — similar, but using [Bublé](https://buble.surge.sh/) which is a faster alternative with less configuration
-* [TypeScript](https://github.com/rollup/rollup-starter-lib/tree/typescript) — uses [TypeScript](https://www.typescriptlang.org/) for type-safe code and transpiling
-
-
 
 ## License
 
