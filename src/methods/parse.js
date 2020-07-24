@@ -4,5 +4,5 @@ export default function parse (query, options) {
 	query = query || "usingQP=true";
 	options = options || {};
 
-	return qs.parse(query);
+	return qs.parse(query, options);
 }

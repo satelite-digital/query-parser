@@ -1,12 +1,7 @@
-const qs = require('qs');
-
-import objQueryToString from '../helpers/objQueryToString.js';
+import build from "./../methods/build.js";
 
 export default function parseMiddleware (req, res, next) {
-
-	req._query = qs.parse(
-        objQueryToString(query)
-    );
-
-    next();
+    req._query = build(req.query, { encode : false });
+    next()
+    return req._query;
 }
