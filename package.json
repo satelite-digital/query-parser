@@ -1,6 +1,6 @@
 {
   "name": "@ericksatelite/query-parser",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "main": "dist/query-parser.cjs.js",
   "module": "dist/query-parser.esm.js",
   "browser": "dist/query-parser.umd.js",
