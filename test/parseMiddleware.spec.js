@@ -15,5 +15,5 @@ function test(query, expected, spec) {
 
 module.exports = function parseMiddlewareTest(){
     console.log('\n Test qp.parseMiddleware() from parseMiddleware.spec.js:\n')
-	test({ "where[0]" : 1, "hola[mundo][adios]" : 'hey'}, 'where[0]=1&hola[mundo][adios]=hey');
+	test({ "where[0]" : 1, "hola[mundo][adios]" : 'hey'}, { where : [ 1 ], hola : { mundo : { adios : 'hey' } } });
 };
