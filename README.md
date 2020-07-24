@@ -69,3 +69,6 @@ npm install --save @satelite/query-parser
 ## To do
 
 - Agregar soporte para opcion de palabras a excluir para evitar conflictos de implementacion (ej. GraphQL podria entrar en conflicto con select e include)
+- Agregar middleware Express
+- Agregar middleware API Client
+- Agregar documentación
