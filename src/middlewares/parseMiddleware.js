@@ -1,5 +1,5 @@
 const qs = require('qs');
-const objQueryToString = require('./../helpers/objQueryToString.js');
+const objQueryToString = require('../helpers/objQueryToString.js');
 
 export default function parseMiddleware (req, res, next) {
 
