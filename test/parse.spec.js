@@ -1,5 +1,5 @@
 const assert = require('assert');
-const qp = require('../dist/query-parser.cjs');
+const qp = require('..');
 
 function test(query, expected, spec) {
 	spec = spec || "Test passed: "
